@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Audit de contenus de Plaud · R5.MDEE.15</title>
+<meta name="description" content="Audit de contenus de Plaud : site français, Instagram, grille d'évaluation, concurrents, SWOT et recommandations. R5.MDEE.15, IUT de Roubaix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Design System : .claude/skills/slides-design/ds.html, copie locale dans ../ds.html
+   Quatre niveaux, calés sur un écran de 1280 px : Détail 12 px · Texte 14 px · Chiffre 30 px · Titre 50 px
+   Orange (#f57c00, demandé par Sofian pour les notes moyennes et les réponses partielles, identique au deck Lacoste) */
+:root{
+  --encre:#0a0a0a; --fond:#f5f5f5; --carte:#fff; --filet:#e4e4e2;
+  --bleu:#1d9bf0; --vert:#008000; --rouge:#ff0000; --orange:#f57c00;
+  --sourdine:rgba(10,10,10,.55); --tenu:rgba(10,10,10,.38);
+  --fs-titre:3.9vw; --fs-chiffre:2.34vw; --fs-md:1.09vw; --fs-sm:.94vw;
+  --sans:"Plus Jakarta Sans",system-ui,sans-serif;
+  --r:20px; --rail:6vh; --g:calc(var(--rail) + .9vh + 2.8vw);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:var(--fs-md);font-weight:400;line-height:1.45;
+  color:var(--encre);background:var(--fond);scroll-snap-type:y mandatory;overflow-x:hidden}
+
+/* rail en verre liquide : même réglage que le deck Lacoste « plan de contenu », validé par Sofian */
+.rail{position:fixed;top:1.4vh;bottom:1.4vh;left:.9vh;width:var(--rail);z-index:50;
+  display:flex;flex-direction:column;align-items:center;padding:1.2vh 0;
+  border-radius:2.6vh;border:1px solid rgba(10,10,10,.08);
+  background:color-mix(in srgb,#fff 28%,transparent);
+  -webkit-backdrop-filter:blur(1.5px) saturate(1.15);backdrop-filter:blur(1.5px) saturate(1.15);
+  box-shadow:inset 1px 1px 1px rgba(255,255,255,.6),0 8px 30px rgba(10,10,10,.12)}
+.rail .mark{width:3.6vh;height:3.6vh;margin:1.2vh 0 .4vh;border-radius:1vh;overflow:hidden;display:block;flex:none}
+.rail .mark img{width:100%;height:100%;display:block}
+.rail .liens{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6vh;margin:auto 0}
+.rail .liens a{width:3.6vh;height:3.6vh;display:grid;place-items:center;border-radius:1.1vh;background:rgba(255,255,255,.62);
+  border:1px solid rgba(10,10,10,.08);font-size:var(--fs-sm);font-weight:600;color:var(--sourdine);text-decoration:none;transition:.18s}
+.rail .liens a:hover{background:#fff;color:var(--encre)}
+.rail .liens a.on{color:#fff;background:var(--encre);border-color:var(--encre)}
+.rail .bar{width:2vh;height:15vh;border-radius:999px;background:rgba(10,10,10,.14);overflow:hidden;flex:none;margin-bottom:.6vh}
+.rail .bar i{display:block;width:100%;background:var(--bleu);height:0;border-radius:999px}
+
+section{height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;
+  padding:10.5vh 2.8vw 7.5vh var(--g);display:flex;flex-direction:column;
+  border-top:1px solid var(--filet);position:relative;overflow:hidden}
+section:first-of-type{border-top:0}
+.num{position:absolute;bottom:2.6vh;right:2.6vw;font-size:var(--fs-sm);font-weight:600;letter-spacing:.16em;color:var(--tenu);z-index:3}
+h1,h2{font-size:var(--fs-titre);font-weight:600;letter-spacing:-.035em;line-height:1.04;margin:0 0 3.6vh}
+h2{translate:var(--t-dx,0) var(--t-dy,0)}
+h2 .gris{color:var(--tenu)}
+.pied{position:absolute;bottom:2.6vh;left:var(--g);right:9vw;font-size:var(--fs-sm);
+  font-weight:300;color:var(--tenu);z-index:3;margin:0;white-space:nowrap;overflow:hidden}
+.pied img{height:1.2em;width:auto;vertical-align:-.22em;margin:0 .3em 0 .15em}
+.lg-s{position:absolute;top:3.4vh;left:var(--g);height:3.2vh;width:auto;z-index:6;display:block}
+.lg-i{position:absolute;top:3.4vh;right:2.6vw;height:3vh;width:auto;z-index:6;display:block}
+#s1 .lg-s{filter:invert(1)}
+#s1 .lg-i{background:rgba(255,255,255,.92);border-radius:8px;padding:.6vh .9vh;height:4.4vh;top:2.8vh}
+.chip{display:inline-flex;align-items:center;gap:.45em;border-radius:999px;padding:.3em .9em;font-size:var(--fs-sm);
+  font-weight:600;background:var(--carte);color:var(--encre);border:1px solid rgba(10,10,10,.28);white-space:nowrap}
+.chip.vert{background:var(--vert);border-color:var(--vert);color:#fff}
+.chip.orange{background:var(--orange);border-color:var(--orange);color:#fff}
+.vert{color:var(--vert)} .rouge{color:var(--rouge)} .bleu{color:var(--bleu)} .orange{color:var(--orange)}
+.carte{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r)}
+/* une capture garde son propre format : le cadre suit l'image, jamais l'inverse */
+.cap{display:block;max-width:100%;height:auto;border-radius:12px;border:1px solid var(--filet);margin:0 auto}
+
+/* ============ S1 · COUVERTURE ============ */
+#s1{background:#000;color:#fff;border-top:0;padding:0}
+#s1 .fond{position:absolute;inset:0;overflow:hidden}
+#s1 .fond img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;display:block}
+#s1 .voile{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.25) 45%,rgba(0,0,0,0) 70%),linear-gradient(180deg,rgba(0,0,0,0) 70%,rgba(0,0,0,.6) 100%)}
+.tw{position:absolute;left:var(--x);top:var(--y);width:var(--l,86%);transform:translate(-50%,-50%);margin:0;z-index:2;text-align:center}
+#s1 .titre{text-align:left}
+#s1 h1{font-size:clamp(2.6rem,5.4vw,5.4rem);font-weight:600;letter-spacing:-.045em;line-height:1;margin:0}
+#s1 .sub{margin:2.4vh 0 0;color:#e4e9eb;font-size:var(--fs-chiffre);font-weight:400;line-height:1.3;max-width:24ch}
+#s1 .mention{font-size:var(--fs-sm);font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:#8ecdf7}
+#s1 .meta{font-size:var(--fs-sm);font-weight:300;color:rgba(255,255,255,.75);letter-spacing:.04em}
+#s1 .num{color:rgba(255,255,255,.55)}
+
+/* ============ S2 · SOMMAIRE ============ */
+.som{flex:1;min-height:0;display:grid;grid-template-columns:.8fr 1.2fr;gap:4vw;align-items:center}
+.som-g h2{font-size:clamp(3rem,7vw,6.6rem);margin:0}
+.som-g p{color:var(--sourdine);margin:2vh 0 0;max-width:30ch}
+.som ol{list-style:none;margin:0;padding:0}
+.som li a{display:grid;grid-template-columns:4.2vw 1fr auto;align-items:baseline;gap:1vw;padding:1.1vh 0;border-top:1px solid var(--filet);color:var(--encre);text-decoration:none}
+.som li:last-child a{border-bottom:1px solid var(--filet)}
+.som .n{font-size:var(--fs-chiffre);font-weight:300;color:var(--bleu)}
+.som .t{font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em}
+.som .f{font-size:var(--fs-chiffre);color:var(--tenu)}
+
+/* ============ S3 · QUI EST PLAUD ============ */
+.qui{flex:1;min-height:0;display:grid;grid-template-columns:1.7fr 1fr;gap:1.6vw;align-items:center}
+.qui-g{display:flex;align-items:center;justify-content:center;min-height:0}
+.qui-g .cap{max-height:66vh}
+.qui-d{display:flex;flex-direction:column;gap:2vh;min-height:0}
+.gamme{display:grid;grid-template-columns:repeat(5,1fr);gap:.6vw}
+.gamme div{background:var(--carte);border:1px solid var(--filet);border-radius:14px;padding:1.2vh .3vw 1vh;display:flex;flex-direction:column;align-items:center;gap:.6vh}
+.gamme img{height:9vh;width:100%;object-fit:contain}
+.gamme b{font-size:var(--fs-sm);font-weight:600;text-align:center;line-height:1.2}
+.gamme span{font-size:var(--fs-sm);color:var(--sourdine);white-space:nowrap}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:.8vw}
+.stat{border-radius:var(--r);padding:2vh 1vw;display:flex;flex-direction:column;justify-content:flex-end;gap:.8vh;min-height:22vh}
+.stat b{font-size:var(--fs-chiffre);font-weight:600;letter-spacing:-.03em;white-space:nowrap;line-height:1}
+.stat span{font-size:var(--fs-sm);font-weight:500;line-height:1.25}
+.stat.noir{background:var(--encre);color:#fff}
+.stat.bleu{background:var(--bleu);color:#fff}
+.stat.clair{background:var(--carte);border:1px solid var(--filet)} .stat.clair span{color:var(--sourdine)}
+
+/* ============ S4 · INVENTAIRE SITE ============ */
+.inv5{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1vw}
+.inv5 .carte{padding:1vh .8vw 1.6vh;display:flex;flex-direction:column;gap:1.4vh;min-height:0}
+.inv5 .cap{width:100%}
+.nom{display:flex;align-items:baseline;justify-content:center;gap:.5em;text-align:center}
+.nom i{font-style:normal;font-size:var(--fs-sm);font-weight:600;color:var(--bleu)}
+.nom b{font-size:var(--fs-md);font-weight:600;line-height:1.2}
+.inv5 dl{margin:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:1.2vh;flex:1}
+.inv5 dt{font-size:var(--fs-sm);font-weight:300;color:var(--sourdine)}
+.inv5 dd{margin:0;font-size:var(--fs-sm);font-weight:500;line-height:1.3}
+
+/* ============ S5 · INSTAGRAM (cartes façon « voyage » + lecteur) ============ */
+.ig{flex:1;min-height:0;display:grid;grid-template-columns:1fr 17vw;gap:1.2vw}
+.ig-g{display:grid;grid-template-rows:auto 1fr;gap:1.4vh;min-height:0}
+.ig-haut{display:flex;align-items:center;gap:.8vw;font-size:var(--fs-md)}
+.ig-haut img{height:3vh;width:auto}
+.ig-haut b{font-size:var(--fs-md);font-weight:600}
+.ig-haut span{color:var(--sourdine);font-size:var(--fs-sm)}
+.ig10{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;gap:.8vw;min-height:0}
+.voy{position:relative;border-radius:18px;overflow:hidden;background:#111;min-height:0;color:#fff}
+.voy > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.voy::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.82) 100%)}
+.voy .date{position:absolute;top:.8vh;left:.6vw;z-index:2;font-size:var(--fs-sm);font-weight:600;background:rgba(0,0,0,.45);border-radius:999px;padding:.15em .6em}
+.voy .bas{position:absolute;left:.6vw;right:.6vw;bottom:.9vh;z-index:2;display:flex;flex-direction:column;gap:.6vh}
+.voy .bas b{font-size:var(--fs-sm);font-weight:600;line-height:1.2}
+.voy .ico{display:flex;gap:.4vw;flex-wrap:wrap}
+.voy .ico span{display:inline-flex;align-items:center;gap:.3em;font-size:var(--fs-sm);font-weight:600;background:rgba(255,255,255,.18);border-radius:999px;padding:.15em .55em}
+.voy .ico svg{width:1.05em;height:1.05em;fill:none;stroke:#fff;stroke-width:2.2}
+.lecteur{position:relative;border-radius:18px;overflow:hidden;background:#000;cursor:pointer;min-height:0}
+.lecteur video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lecteur .lire{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:7vh;height:7vh;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;z-index:3;transition:opacity .2s}
+.lecteur .lire svg{width:2.6vh;height:2.6vh;fill:var(--encre);margin-left:.4vh}
+.lecteur .leg{position:absolute;left:.8vw;right:.8vw;bottom:1.2vh;z-index:3;color:#fff;display:flex;flex-direction:column;gap:.6vh;transition:opacity .2s;pointer-events:none}
+.lecteur .leg b{font-size:var(--fs-md);font-weight:600;line-height:1.2}
+.lecteur::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.8) 100%);pointer-events:none;transition:opacity .2s}
+.lecteur.lecture .lire,.lecteur.lecture .leg,.lecteur.lecture::after{opacity:0}
+.lecteur .ico span{display:inline-flex;align-items:center;gap:.3em;font-size:var(--fs-sm);font-weight:600;background:rgba(255,255,255,.18);border-radius:999px;padding:.15em .55em}
+.lecteur .ico{display:flex;gap:.4vw;flex-wrap:wrap}
+.lecteur .ico svg{width:1.05em;height:1.05em;fill:none;stroke:#fff;stroke-width:2.2}
+.lecteur .top{position:absolute;top:1vh;left:.8vw;z-index:3;transition:opacity .2s}
+.lecteur.lecture .top{opacity:0}
+
+/* ============ S6 · APPLICATION DE LA GRILLE ============ */
+.grille{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1vw}
+.grille .carte{padding:1vh .8vw 1.2vh;display:flex;flex-direction:column;gap:1.1vh;min-height:0}
+.grille .img{height:18vh;display:flex;align-items:center;justify-content:center;flex:none}
+.grille .img .cap{max-height:18vh;width:auto}
+.crit{display:grid;gap:1vh;margin:.2vh 0 0;padding:0;list-style:none}
+.crit li{display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-md);color:var(--sourdine)}
+.pts{display:flex;gap:.3vw}
+.pts u{width:.85vw;height:.85vw;border-radius:50%;background:var(--filet);display:block}
+.pts u.o{background:var(--bleu)}
+.pts.faible u.o{background:var(--rouge)}
+.grille .fait{font-size:var(--fs-sm);color:var(--sourdine);line-height:1.3;text-align:center;margin:0;min-height:2.6em}
+.score{margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--filet);padding-top:1vh}
+.score b{font-size:var(--fs-chiffre);font-weight:600;letter-spacing:-.03em}
+.score b small{font-size:var(--fs-md);font-weight:500;color:var(--tenu)}
+
+/* ============ S7 · CONCURRENTS (application des outils) ============ */
+.bench{flex:1;min-height:0;display:grid;grid-template-columns:9vw 1fr 1fr;grid-template-rows:auto auto auto auto;gap:1.6vh 1.2vw;align-content:space-between}
+.outil{display:flex;flex-direction:column;justify-content:center;gap:.5vh;font-size:var(--fs-sm);color:var(--sourdine)}
+.outil img{height:2.6vh;width:auto;max-width:100%;object-fit:contain;object-position:left center}
+.outil b{font-size:var(--fs-sm);color:var(--encre);font-weight:600}
+.marque{display:flex;align-items:center;justify-content:space-between;gap:1vw;padding:1.1vh 1vw}
+.marque img{height:4.6vh;width:auto}
+.marque .note{text-align:right;line-height:1.15}
+.marque .note b{font-size:var(--fs-chiffre);font-weight:600;letter-spacing:-.03em}
+.marque .note span{display:block;font-size:var(--fs-sm);color:var(--sourdine)}
+.cel{display:flex;align-items:center;justify-content:center;min-height:0}
+.cel .cap{max-height:22vh;width:auto}
+
+/* ============ S8 · SWOT ============ */
+.swot{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1.2vw}
+.swot > div{border-radius:var(--r);padding:2vh 1.6vw;display:flex;flex-direction:column;gap:1vh}
+.swot h3{margin:0;font-size:var(--fs-md);text-transform:uppercase;font-weight:600;letter-spacing:.1em;display:flex;align-items:baseline;gap:.6em}
+.swot h3 span{font-size:var(--fs-md);font-weight:600;letter-spacing:.1em;opacity:.7}
+.swot ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;justify-content:space-evenly;flex:1}
+.swot li{font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1.15;padding-left:1.1em;position:relative}
+.swot li::before{content:"";position:absolute;left:0;top:.45em;width:.35em;height:.35em;border-radius:50%;background:currentColor;opacity:.5}
+.swot .f{background:var(--vert);color:#fff}
+.swot .w{background:var(--carte);border:2px solid var(--rouge)} .swot .w h3{color:var(--rouge)}
+.swot .o{background:var(--bleu);color:#fff}
+.swot .m{background:var(--encre);color:#fff}
+
+/* ============ S9 · FAIBLESSE ET RECOMMANDATIONS ============ */
+.fr9{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1.15fr;gap:2vw}
+.fr9-g{display:flex;flex-direction:column;gap:1.4vh;min-height:0}
+.faib{border-radius:var(--r);background:var(--rouge);color:#fff;padding:1.8vh 1.6vw;display:flex;flex-direction:column;gap:.8vh}
+.faib span{font-size:var(--fs-sm);font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.faib b{font-size:var(--fs-chiffre);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.parcours{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;gap:.6vh}
+.parcours .cap{max-height:21vh;width:auto}
+.parcours .fl{font-size:var(--fs-sm);font-weight:600;color:var(--sourdine)}
+.recos{display:grid;grid-template-rows:1.25fr 1fr 1fr;gap:1.4vh;min-height:0}
+.reco{border-radius:var(--r);padding:1.8vh 1.6vw;display:grid;grid-template-columns:4vw 1fr;gap:1vw;align-items:center}
+.reco .n{font-size:var(--fs-titre);font-weight:600;letter-spacing:-.04em;line-height:1}
+.reco b{display:block;font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em;line-height:1.15}
+.reco span.d{display:block;font-size:var(--fs-sm);margin-top:.8vh;opacity:.85}
+.reco.prio{background:var(--bleu);color:#fff}
+.reco.clair{background:var(--carte);border:1px solid var(--filet)} .reco.clair .n{color:var(--bleu)} .reco.clair span.d{color:var(--sourdine);opacity:1}
+.prio .chip{background:#fff;color:var(--bleu);border-color:#fff;margin-left:.6em;vertical-align:.3em}
+
+/* ============ S10 · BONUS 10 QUESTIONS ============ */
+.q10{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,1fr);grid-auto-flow:column;gap:1vh 1.2vw}
+.q{display:grid;grid-template-columns:2vw 2.4vw 1fr auto;gap:.8vw;align-items:center;padding:.6vh 1vw}
+.q .n{font-size:var(--fs-md);font-weight:600;color:var(--bleu)}
+.q .src{width:2.2vw;height:2.2vw}
+.q p{margin:0;font-size:var(--fs-sm);line-height:1.3}
+.q p small{display:block;color:var(--tenu);margin-top:.2vh}
+.q .rep{font-size:var(--fs-sm);font-weight:600;padding:.25em .8em;border-radius:999px;color:#fff;white-space:nowrap}
+.q .rep.oui{background:var(--vert)} .q .rep.part{background:var(--orange)}
+.q10-bilan{display:flex;gap:1.6vw;align-items:baseline;margin:-1.6vh 0 1.6vh;font-size:var(--fs-md);color:var(--sourdine)}
+.q10-bilan b{font-size:var(--fs-chiffre);font-weight:600;color:var(--encre)}
+
+/* ============ S11 · ANNEXE ============ */
+.anx{flex:1;min-height:0;display:grid;grid-template-columns:2.6fr 1fr;gap:1.2vw}
+.anx-s{padding:1.6vh 1.4vw;min-height:0}
+.anx ol{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(7,1fr);grid-auto-flow:column;gap:.9vh 1.2vw;height:100%}
+.anx li{counter-increment:s;position:relative;padding-left:2.2em;font-size:var(--fs-sm);line-height:1.3;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--filet)}
+.anx li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:50%;transform:translateY(-50%);font-weight:600;color:var(--bleu)}
+.anx li b{font-weight:600}
+.anx li span{color:var(--sourdine);overflow-wrap:anywhere}
+.anx-ia{border-radius:var(--r);background:var(--encre);color:#fff;padding:2vh 1.4vw;display:flex;flex-direction:column;gap:1.4vh}
+.anx-ia .qui2{display:flex;align-items:center;gap:.5em;font-weight:600;font-size:var(--fs-md)}
+.anx-ia .qui2 img{height:1.4em;width:auto}
+.anx-ia ul{margin:0;padding-left:1.1em;display:grid;gap:1.2vh;list-style:disc}
+.anx-ia li{counter-increment:none;border:0;padding-left:0;display:list-item}
+.anx-ia li::before{content:none}
+.anx-ia li{font-size:var(--fs-sm);line-height:1.4;color:rgba(255,255,255,.85)}
+.anx-ia p{margin:auto 0 0;font-size:var(--fs-sm);color:rgba(255,255,255,.65);line-height:1.4}
+
+/* ============ v5 (26/09 soir) : retours de Sofian ============ */
+/* S3 : image en haut à gauche, produits en colonne à droite, 3 chiffres en bas au centre */
+.qui{flex:1;min-height:0;display:grid;grid-template-columns:1fr 13vw;grid-template-rows:1fr auto;gap:1.6vh 1.4vw;align-items:stretch}
+.qui-img{display:flex;align-items:flex-start;justify-content:flex-start;min-height:0}
+.qui-img .cap{max-height:100%;width:auto;margin:0}
+.qui .gamme{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:.8vh;min-height:0}
+.qui .gamme div{flex:1;display:grid;grid-template-columns:3.4vw 1fr;align-items:center;gap:.6vw;padding:.4vh .6vw;background:var(--carte);border:1px solid var(--filet);border-radius:14px;min-height:0}
+.qui .gamme img{height:6.2vh;width:100%;object-fit:contain}
+.qui .gamme p{margin:0;display:flex;flex-direction:column;align-items:flex-start}
+.qui .gamme b{font-size:var(--fs-md);font-weight:600;text-align:left}
+.qui .stats3{grid-column:1 / -1;grid-row:2;justify-self:center;display:grid;grid-template-columns:repeat(3,auto);gap:1vw}
+.qui .stat{min-height:0;padding:1.6vh 1.6vw;gap:.6vh}
+.qui .stat span{white-space:nowrap;font-size:var(--fs-md)}
+/* carrousels horizontaux (S4, S5) : 2,5 cartes visibles, flèches de Balls Kingdom */
+.car2{flex:1;min-height:0;display:flex;flex-direction:column;gap:1.6vh}
+.piste{flex:1;min-height:0;display:flex;gap:1.2vw;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:.2vh}
+.piste::-webkit-scrollbar{display:none}
+.piste > *{scroll-snap-align:start;flex:none}
+.car-nav{display:flex;align-items:center;justify-content:center;gap:1.2vw}
+.car-nav .fleche{width:5.6vh;height:5.6vh;border-radius:999px;border:1px solid rgba(26,26,26,.14);background:color-mix(in srgb,#fff 72%,transparent);
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);box-shadow:0 4px 14px rgba(26,26,26,.16);color:rgba(26,26,26,.62);
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:color .2s,border-color .2s}
+.car-nav .fleche:hover{color:#1a1a1a;border-color:#1a1a1a}
+.car-nav .fleche svg{width:100%;height:100%;display:block}
+.car-dots{display:flex;gap:.6vh}
+.car-dots i{width:1.1vh;height:1.1vh;border-radius:50%;background:rgba(10,10,10,.2);display:block;cursor:pointer}
+.car-dots i.on{background:var(--encre)}
+.p4 .it4{width:calc((100% - 2 * 1.2vw) / 2.5);padding:1.4vh 1.2vw 1.6vh;display:flex;flex-direction:column;gap:1.4vh}
+.p4 .it4 .cap{width:100%}
+.p4 .it4 .nom b{font-size:var(--fs-chiffre);font-weight:500;letter-spacing:-.02em}
+.p4 .it4 .nom i{font-size:var(--fs-md)}
+.p4 .it4 dl{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:1.2vh 1.2vw;flex:1;align-content:space-evenly}
+.p4 .it4 dt{font-size:var(--fs-sm);font-weight:300;color:var(--sourdine)}
+.p4 .it4 dd{margin:0;font-size:var(--fs-md);font-weight:500;line-height:1.3}
+#s5 .ig-haut{margin:-1.4vh 0 1.4vh}
+.ig-haut img{height:3.4vh;width:auto}
+.p5{align-items:center}
+.p5 .voy{height:90%;width:auto;aspect-ratio:var(--ar)}
+.voy > img{object-fit:contain;object-position:50% 50%}
+.voy::after{background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 14%,rgba(0,0,0,0) 62%,rgba(0,0,0,.78) 100%)}
+.voy .date{background:none;padding:0;top:1.2vh;left:1vw;font-size:var(--fs-md);text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.voy .bas{left:1vw;right:1vw;bottom:1.4vh}
+.voy .bas b{font-size:var(--fs-md)}
+.voy.lecteur video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.voy.lecteur .lire{top:45%}
+.voy.lecteur.lecture::after,.voy.lecteur.lecture .date,.voy.lecteur.lecture .bas{opacity:0}
+.voy.lecteur .date,.voy.lecteur .bas,.voy.lecteur::after{transition:opacity .2s}
+/* S6 : les preuves encadrées avec zoom */
+.grille .img{height:31vh}
+.grille .img .cap{max-height:31vh;max-width:100%}
+.crit{gap:.55vh}
+.crit li{font-size:var(--fs-sm)}
+/* S7 : réseaux sociaux des concurrents */
+.rsg{display:grid;grid-template-columns:repeat(3,1fr);gap:.6vh .8vw;padding:1vh 1vw}
+.rs{display:grid;grid-template-columns:2.6vh auto 1fr;align-items:center;gap:.5vw;font-size:var(--fs-sm)}
+.rs img{width:2.6vh;height:2.6vh;object-fit:contain}
+.rs b{font-size:var(--fs-md);font-weight:600}
+.rs span{color:var(--sourdine);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cel .cap{max-height:19vh}
+@media print{
+  .car-nav{display:none!important}
+  .piste{overflow:visible;display:grid;grid-template-columns:repeat(5,1fr);gap:.8vw}
+  .p4 .it4{width:auto;padding:1vh .6vw}
+  .p4 .it4 .nom b{font-size:var(--fs-md)}
+  .p4 .it4 dl{grid-template-columns:1fr}
+  .p4 .it4 dd{font-size:var(--fs-sm)}
+  .p5{grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr}
+  .p5 .voy{height:auto;width:100%;max-height:100%}
+}
+
+
+/* agrandissement d'une preuve au clic (slide 6) */
+.grille .img{cursor:zoom-in}
+.loupe{position:fixed;inset:0;z-index:80;background:rgba(10,10,10,.82);display:none;align-items:center;justify-content:center;cursor:zoom-out}
+.loupe.on{display:flex}
+.loupe img{max-width:88vw;max-height:88vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+@media print{.loupe{display:none!important}}
+
+/* annexe : liste façon deck SEO, encadré IA réduit */
+.anx2{flex:1;min-height:0;display:grid;grid-template-columns:3fr 1fr;gap:1.2vw;align-items:start}
+.anx2 .anx-c{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r);padding:1.1em 1.3em;height:100%;display:flex;flex-direction:column;min-height:0}
+.apa{list-style:none;margin:0;padding:0;counter-reset:src;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(7,1fr);grid-auto-flow:column;gap:.7vh .8vw;flex:1;min-height:0}
+.apa li{counter-increment:src;position:relative;display:flex;align-items:center;background:#f3f3f1;border:1px solid var(--filet);border-radius:12px;padding:.2em .8em .2em 2.8em;min-height:0;overflow:hidden}
+.apa li::before{content:counter(src,decimal-leading-zero);position:absolute;left:.8em;top:50%;transform:translateY(-50%);font-weight:700;font-size:clamp(13px,.95vw,.95rem);color:var(--bleu)}
+.apa .r{font-size:clamp(11.5px,.84vw,.82rem);font-style:italic;color:var(--sourdine);line-height:1.25;overflow-wrap:anywhere}
+.apa li i{font-style:normal;font-weight:700;color:var(--encre)}
+.anx2 .anx-ia{padding:1.8vh 1.2vw;gap:1.2vh;height:auto}
+.anx2 .anx-ia ul{margin:0;padding-left:1.1em;display:grid;gap:.6vh}
+.anx2 .anx-ia li{counter-increment:none;border:0;padding:0;display:list-item;font-size:var(--fs-sm)}
+.anx2 .anx-ia li::before{content:none}
+.anx2 .anx-ia p{margin:.6vh 0 0}
+/* lecteur plein écran de la vidéo */
+.ecran{position:fixed;inset:0;z-index:85;background:rgba(10,10,10,.9);display:none;align-items:center;justify-content:center}
+.ecran.on{display:flex}
+.ecran video{max-width:92vw;max-height:92vh;border-radius:14px;background:#000}
+.ecran .x{position:absolute;top:2.4vh;right:2.4vw;width:5.6vh;height:5.6vh;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;font-size:3vh;cursor:pointer}
+@media print{.ecran{display:none!important}}
+/* notes orateur, touche N */
+.notes{display:none;position:fixed;left:var(--rail);right:0;bottom:0;background:var(--encre);
+  color:#fff;padding:1.6vh 4vw;font-size:15px;line-height:1.55;max-height:36vh;overflow:auto;z-index:40;cursor:text;outline:0;white-space:pre-line}
+body.notesvues section.ici .notes{display:block}
+.notes:focus{box-shadow:inset 0 3px 0 var(--bleu)}
+.notes::after{content:attr(data-aide);display:block;margin-top:.7em;font-size:11px;color:rgba(255,255,255,.45);user-select:none}
+.toast{position:fixed;left:50%;bottom:3vh;transform:translateX(-50%);background:var(--bleu);color:#fff;border-radius:999px;padding:.5em 1.2em;font-size:13px;font-weight:600;z-index:95;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.on{opacity:1}
+
+/* mode réglage, touche T */
+body.reglage [data-tw]{outline:1px dashed rgba(29,155,240,.75);outline-offset:1px;cursor:grab}
+body.reglage [data-tw].vise{outline:2.5px solid var(--bleu)}
+.panneau{display:none;position:fixed;right:16px;top:16px;z-index:90;max-height:78vh;overflow:auto;background:var(--encre);color:#e4e9eb;
+  border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px 16px;font-size:12px;font-weight:300;line-height:1.6;width:340px}
+.panneau.gauche{right:auto;left:calc(var(--rail) + 16px)}
+body.reglage .panneau{display:block}
+.panneau b{font-weight:600;color:#fff}
+.panneau .l{display:flex;justify-content:space-between;gap:14px;font-family:ui-monospace,Menlo,monospace;cursor:pointer;padding:1px 4px;border-radius:6px}
+.panneau .l.vise{color:#7fcbff;background:rgba(29,155,240,.16)}
+.panneau .aide{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.62)}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  :root{--rail:0px}
+  .notes,.rail,.panneau,.toast,.lecteur .lire{display:none!important}
+  html,body{scroll-snap-type:none}
+  section{height:720px;break-inside:avoid;page-break-after:always}
+  section:last-of-type{page-break-after:auto}
+  [data-tw]{outline:0!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<nav class="rail" aria-label="Sommaire">
+  <a class="mark" href="#s1" title="Aller à la couverture"><img src="../assets/logo-plaud-icone-hd.png" alt="Plaud"></a>
+  <div class="liens"><a href="#s1" class="on">1</a><a href="#s2">2</a><a href="#s3">3</a><a href="#s4">4</a><a href="#s5">5</a><a href="#s6">6</a><a href="#s7">7</a><a href="#s8">8</a><a href="#s9">9</a><a href="#s10">10</a><a href="#s11">11</a></div>
+  <div class="bar"><i></i></div>
+</nav>
+<div class="panneau" id="panneau"></div>
+
+<!-- ============ 1 · COUVERTURE ============ -->
+<section id="s1">
+  <div class="fond" data-tw="image de fond"><img src="../assets/cover-notepro.png" alt="Deux Plaud Note Pro posés sur une vague sombre"></div>
+  <div class="voile"></div>
+  <div class="tw titre" data-tw="titre" style="--x:28%;--y:48%;--l:44%">
+    <h1>Audit de contenus de Plaud</h1>
+    <p class="sub" data-edit>Site, Instagram et concurrents passés à la grille</p>
+  </div>
+  <p class="mention tw" data-tw="mention" style="--x:50%;--y:88.5%;--l:86%">R5.MDEE.15 · Stratégie de contenu et rédaction web · Mme Z. Obaidalahe</p>
+  <p class="meta tw" data-tw="auteurs" style="--x:50%;--y:92.8%;--l:86%">Romane Da Silva, Yoan Bailleul &amp; Sofian Chtioui · BUT3 MDEE · IUT de Roubaix</p>
+  <div class="num">1 / 11</div>
+  <div class="notes">Bonjour à tous. Qui ici a déjà enregistré un cours sur son téléphone pour ne rien rater ?
+C'est exactement le besoin de Plaud, la marque que nous avons auditée : de petits enregistreurs qui transcrivent et résument les conversations grâce à l'IA.
+Nous avons suivi la démarche du cours, étape par étape, de l'inventaire jusqu'aux recommandations.</div>
+</section>
+
+<!-- ============ 2 · SOMMAIRE ============ -->
+<section id="s2">
+  <div class="som">
+    <div class="som-g" data-tw="titre sommaire"><h2>Sommaire</h2><p>Les six étapes de l'audit de contenus, appliquées à Plaud.</p></div>
+    <ol data-tw="liste">
+      <li><a href="#s3"><span class="n">01</span><span class="t">Qui est Plaud ?</span><span class="f">→</span></a></li>
+      <li><a href="#s4"><span class="n">02</span><span class="t">Inventaire : 5 pages du site</span><span class="f">→</span></a></li>
+      <li><a href="#s5"><span class="n">03</span><span class="t">Inventaire : 10 posts Instagram</span><span class="f">→</span></a></li>
+      <li><a href="#s6"><span class="n">04</span><span class="t">Application de la grille</span><span class="f">→</span></a></li>
+      <li><a href="#s7"><span class="n">05</span><span class="t">Deux concurrents</span><span class="f">→</span></a></li>
+      <li><a href="#s8"><span class="n">06</span><span class="t">SWOT de contenus</span><span class="f">→</span></a></li>
+      <li><a href="#s9"><span class="n">07</span><span class="t">Faiblesse et recommandations</span><span class="f">→</span></a></li>
+      <li><a href="#s10"><span class="n">08</span><span class="t">Bonus : 10 questions de la cible</span><span class="f">→</span></a></li>
+      <li><a href="#s11"><span class="n">09</span><span class="t">Annexe : sources</span><span class="f">→</span></a></li>
+    </ol>
+  </div>
+  <div class="num">2 / 11</div>
+  <div class="notes">Voici notre plan. On commence par vous présenter la marque, pour ceux qui ne la connaissent pas.
+Ensuite, on suit les étapes du cours : l'inventaire du site et d'Instagram, sans jugement, puis l'application de la grille sur 18, la comparaison avec deux concurrents, et enfin le SWOT et nos recommandations.
+On termine par un bonus : les dix questions que la cible pose vraiment.</div>
+</section>
+
+<!-- ============ 3 · QUI EST PLAUD ============ -->
+<section id="s3">
+  <h2 data-tw="titre">Qui est Plaud ?</h2>
+  <div class="qui">
+    <div class="qui-img" data-tw="preuve accueil"><img class="cap" src="../assets/preuves/r-fr-plaud-accueil-full.png" alt="Accueil de fr.plaud.ai : « 4,9 sur 5 » et « 2,5 millions de professionnels » encadrés en rouge"></div>
+    <div class="gamme" data-tw="gamme">
+      <div><img src="../assets/produits/note-bl-082426-rogne.png" alt="Plaud Note"><p><b>Note</b><span>169,90 €</span></p></div>
+      <div><img src="../assets/produits/notepro-bl-082426-rogne.png" alt="Plaud Note Pro"><p><b>Note Pro</b><span>189 €</span></p></div>
+      <div><img src="../assets/produits/pins-bl-082426-rogne.png" alt="Plaud NotePin"><p><b>NotePin</b><span>169,90 €</span></p></div>
+      <div><img src="../assets/produits/plaud-notepin-s-black-12-rogne.png" alt="Plaud NotePin S"><p><b>NotePin S</b><span>179 €</span></p></div>
+      <div><img src="../assets/produits/plaud-one-082426-rogne.png" alt="Plaud One"><p><b>One</b><span>précommande</span></p></div>
+    </div>
+    <div class="stats3" data-tw="chiffres">
+      <div class="stat noir"><b>2,5 M</b><span>professionnels utilisateurs</span></div>
+      <div class="stat bleu"><b>4,9 / 5</b><span>note sur l'App Store</span></div>
+      <div class="stat clair"><b>4,7 / 5</b><span>sur Trustpilot, 2 000+ avis</span></div>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Source : fr.plaud.ai, page d'accueil, (consulté le 26/09/2026).</p>
+  <div class="num">3 / 11</div>
+  <div class="notes">Plaud, c'est une marque d'enregistreurs à IA. On pose l'appareil sur la table, ou on le porte sur soi, il enregistre la conversation, puis l'application la transcrit et en fait un résumé.
+La gamme compte cinq appareils, de 169,90 euros à 189 euros, plus le Plaud One, en précommande. Le modèle repose aussi sur un abonnement pour la transcription.
+Sur son site français, la marque revendique 2,5 millions d'utilisateurs professionnels, une note de 4,9 sur l'App Store et de 4,7 sur Trustpilot : c'est encadré en rouge sur la capture.</div>
+</section>
+
+<!-- ============ 4 · INVENTAIRE SITE ============ -->
+<section id="s4">
+  <h2 data-tw="titre">Inventaire : 5 pages du site</h2>
+  <div class="car2" data-tw="pages">
+    <div class="piste p4">
+      <div class="carte it4"><img class="cap" src="../assets/fr-site/S1.png" alt="Accueil"><div class="nom"><b>Accueil</b></div>
+        <dl><div><dt>Format</dt><dd>Page d'accueil, ~900 mots</dd></div><div><dt>Date</dt><dd>Aucune</dd></div><div><dt>Thème</dt><dd>La marque, la gamme, les métiers</dd></div><div><dt>CTA</dt><dd>« Acheter Plaud », « Pourquoi Plaud »</dd></div></dl></div>
+      <div class="carte it4"><img class="cap" src="../assets/fr-site/S2.png" alt="Fiche NotePin"><div class="nom"><b>Fiche NotePin</b></div>
+        <dl><div><dt>Format</dt><dd>Fiche produit, ~2 360 mots</dd></div><div><dt>Date</dt><dd>Dernier avis du 25/05/2026</dd></div><div><dt>Thème</dt><dd>L'appareil, 60 avis, 169,90 €</dd></div><div><dt>CTA</dt><dd>« Ajouter au panier »</dd></div></dl></div>
+      <div class="carte it4"><img class="cap" src="../assets/fr-site/S3.png" alt="Tarifs"><div class="nom"><b>Tarifs</b></div>
+        <dl><div><dt>Format</dt><dd>Tarifs et FAQ, ~620 mots</dd></div><div><dt>Date</dt><dd>Offre jusqu'au 30/11/2026</dd></div><div><dt>Thème</dt><dd>4 forfaits, de 0 à 18,7 €/mois</dd></div><div><dt>CTA</dt><dd>« Commencer », « Acheter »</dd></div></dl></div>
+      <div class="carte it4"><img class="cap" src="../assets/fr-site/S4.png" alt="Blog"><div class="nom"><b>Blog</b></div>
+        <dl><div><dt>Format</dt><dd>Article, ~2 150 mots, 10 min</dd></div><div><dt>Date</dt><dd>22/09/2026</dd></div><div><dt>Thème</dt><dd>5 outils de transcription de réunion</dd></div><div><dt>CTA</dt><dd>Aucun bouton, liens dans le texte</dd></div></dl></div>
+      <div class="carte it4"><img class="cap" src="../assets/fr-site/S5.png" alt="« FAQ » du menu"><div class="nom"><b>« FAQ » du menu</b></div>
+        <dl><div><dt>Format</dt><dd>Centre d'aide, 71 articles</dd></div><div><dt>Date</dt><dd>Aucune</dd></div><div><dt>Thème</dt><dd>Dépannage par appareil</dd></div><div><dt>CTA</dt><dd>« Chat Now » (en anglais)</dd></div></dl></div>
+    </div>
+    <div class="car-nav"><button class="fleche car-p" aria-label="Précédent"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M21 10l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="car-dots"></span><button class="fleche car-n" aria-label="Suivant"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M15 10l8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+  <p class="pied" data-tw="source">Source : fr.plaud.ai et support.plaud.ai/hc/fr, 5 pages clés, (consulté le 26/09/2026).</p>
+  <div class="num">4 / 11</div>
+  <div class="notes">Première étape de l'audit : l'inventaire. Comme la prof nous l'a expliqué, on recense de manière neutre, sans dire encore si c'est bien ou pas.
+On a retenu cinq pages clés du site français : l'accueil, la fiche d'un produit, le NotePin, la page des tarifs, le dernier article du blog et la page ouverte par le lien « FAQ » du menu.
+Pour chacune, on a relevé le format, la date visible, le thème et le CTA, c'est-à-dire le bouton qui pousse à agir.</div>
+</section>
+
+<!-- ============ 5 · INVENTAIRE INSTAGRAM ============ -->
+<section id="s5">
+  <h2 data-tw="titre">Inventaire : 10 posts Instagram</h2>
+  <div class="ig-haut" data-tw="compte"><img src="../assets/logos/instagram.svg" alt="Instagram"><b>@plaud_official</b><span>148 k abonnés · 43 publications · 10 dernières, du 20/04 au 18/09/2026</span></div>
+  <div class="car2" data-tw="posts">
+    <div class="piste p5">
+      <div class="voy" style="--ar:960/1198"><img src="../assets/ig-hd/I1.png" alt="Publication I1"><span class="date">18/09</span><div class="bas"><b>Image · Plaud One en situation</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>32</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>3</span></div></div></div>
+      <div class="voy" style="--ar:960/1198"><img src="../assets/ig-hd/I2.png" alt="Publication I2"><span class="date">31/08</span><div class="bas"><b>Carrousel · Salon IFA de Berlin</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>138</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>8</span></div></div></div>
+      <div class="voy" style="--ar:1198/1198"><img src="../assets/ig-hd/I3.png" alt="Publication I3"><span class="date">28/08</span><div class="bas"><b>Carrousel · Bénéfices de Plaud One</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>339</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>12</span></div></div></div>
+      <div class="voy" style="--ar:1080/1350"><img src="../assets/ig-hd/I4.png" alt="Publication I4"><span class="date">27/08</span><div class="bas"><b>Reel · Lancement de Plaud One</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>305</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>23</span></div></div></div>
+      <div class="voy" style="--ar:1198/1198"><img src="../assets/ig-hd/I5.png" alt="Publication I5"><span class="date">07/07</span><div class="bas"><b>Carrousel · Manifeste de marque</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>120</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>19</span></div></div></div>
+      <div class="voy" style="--ar:1014/1198"><img src="../assets/ig-hd/I6.png" alt="Publication I6"><span class="date">30/06</span><div class="bas"><b>Image · « Be Present »</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>40</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>1</span></div></div></div>
+      <div class="voy" style="--ar:1198/798"><img src="../assets/ig-hd/I7.png" alt="Publication I7"><span class="date">29/06</span><div class="bas"><b>Image · Inspiration</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>53</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>10</span></div></div></div>
+      <div class="voy" style="--ar:1080/1920"><img src="../assets/ig-hd/I8.png" alt="Publication I8"><span class="date">14/05</span><div class="bas"><b>Reel · Témoignage, finance</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>159</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>32</span></div></div></div>
+      <div class="voy" style="--ar:1080/1920"><img src="../assets/ig-hd/I9.png" alt="Publication I9"><span class="date">06/05</span><div class="bas"><b>Reel · Témoignage, immobilier</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>172</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>21</span></div></div></div>
+      <div class="voy lecteur" style="--ar:720/1280" tabindex="0"><video src="../assets/video/I10-reel.mp4" poster="../assets/video/I10-poster.jpg" preload="metadata" playsinline></video><span class="date">20/04 · le plus aimé</span><span class="lire"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><div class="bas"><b>Reel avec le créateur @danieleditorliv</b><div class="ico"><span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>2 160</span><span><svg viewBox="0 0 24 24"><path d="M20.6 16.3a9 9 0 1 0-3.4 3.6l4.3 1.2z"/></svg>130</span></div></div></div>
+    </div>
+    <div class="car-nav"><button class="fleche car-p" aria-label="Précédent"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M21 10l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="car-dots"></span><button class="fleche car-n" aria-label="Suivant"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M15 10l8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+  <p class="pied" data-tw="source">Source : instagram.com/plaud_official, 10 dernières publications, (consulté le 26/09/2026).</p>
+  <div class="num">5 / 11</div>
+  <div class="notes">Même exercice pour le réseau social. On a choisi Instagram, le compte le plus suivi de Plaud : 148 000 abonnés.
+Voici les dix dernières publications, avec leurs j'aime et leurs commentaires. Elles sont toutes en anglais, et la plupart plafonnent entre 30 et 340 j'aime.
+Une seule sort du lot : ce Reel, tourné avec un créateur, Daniel, qui raconte comment il utilise Plaud. Plus de 2 000 j'aime et 130 commentaires. En remontant tout le compte, on retrouve une autre collaboration avec un créateur, allemand cette fois, parmi les trois posts les plus aimés. Pour reprendre le modèle PESO, c'est du média partagé qui fonctionne.</div>
+</section>
+
+<!-- ============ 6 · APPLICATION DE LA GRILLE ============ -->
+<section id="s6">
+  <h2 data-tw="titre">Application de la grille</h2>
+  <div class="grille" data-tw="cartes">
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-S2.png" alt="Preuve pour Fiche NotePin, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>S2</i><b>Fiche NotePin</b></div>
+      <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Conversion<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li></ul>
+      <p class="fait">« Ajouter au panier », mais dates d'avis à l'américaine</p>
+      <div class="score"><b class="vert">15<small> / 18</small></b><span class="chip vert">Conserver</span></div></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I3.png" alt="Preuve pour Carrousel Plaud One, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>I3</i><b>Carrousel Plaud One</b></div>
+      <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Visibilité<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Conversion<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li></ul>
+      <p class="fait">Bénéfices clairs, « Link in bio »</p>
+      <div class="score"><b class="vert">16<small> / 18</small></b><span class="chip vert">Conserver</span></div></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I10.png" alt="Preuve pour Reel avec un créateur, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>I10</i><b>Reel avec un créateur</b></div>
+      <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Conversion<span class="pts faible"><u class="o"></u><u></u><u></u></span></li></ul>
+      <p class="fait">2 160 j'aime, mais aucun lien</p>
+      <div class="score"><b class="vert">15<small> / 18</small></b><span class="chip vert">Conserver</span></div></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-S5.png" alt="Preuve pour « FAQ » du menu, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>S5</i><b>« FAQ » du menu</b></div>
+      <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Cohérence<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Conversion<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li></ul>
+      <p class="fait">Mène au dépannage, « Chat Now » en anglais</p>
+      <div class="score"><b class="orange">10<small> / 18</small></b><span class="chip orange">Améliorer</span></div></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I7.png" alt="Preuve pour Image inspiration, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>I7</i><b>Image inspiration</b></div>
+      <ul class="crit"><li>Pertinence<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Conversion<span class="pts faible"><u class="o"></u><u></u><u></u></span></li></ul>
+      <p class="fait">Aucun produit, 1 seul hashtag</p>
+      <div class="score"><b class="orange">11<small> / 18</small></b><span class="chip orange">Améliorer</span></div></div>
+  </div>
+  <p class="pied" data-tw="source">Sources : Z. Obaidalahe, support de la séance 3, grille d'évaluation ; fr.plaud.ai et Instagram, (consulté le 26/09/2026).</p>
+  <div class="num">6 / 11</div>
+  <div class="notes">Deuxième étape : l'évaluation. On note chaque contenu de 1 à 3 sur les six critères de la grille vue en cours : pertinence, lisibilité, cohérence, fraîcheur, visibilité et conversion. De 15 à 18, on conserve ; de 10 à 14, on améliore.
+On a évalué nos quinze contenus ; en voici cinq, du meilleur au plus faible. La fiche produit et le carrousel sur Plaud One sont solides. Le Reel avec un créateur plaît, mais il n'a aucun lien vers le produit.
+Et surtout, le lien « FAQ » du menu ne mène pas à une foire aux questions, mais à du dépannage, avec des restes d'anglais. Sur nos quinze contenus, la conversion est le critère le plus faible.</div>
+</section>
+
+<!-- ============ 7 · CONCURRENTS ============ -->
+<section id="s7">
+  <h2 data-tw="titre">Deux concurrents <span class="gris">qui laissent la place</span></h2>
+  <div class="bench" data-tw="benchmark">
+    <div></div>
+    <div class="carte marque"><img src="../assets/logo-soundcore-2.png" alt="soundcore by Anker"><div class="note"><b>13,3 / 18</b><span>concurrent direct : le Soundcore Work, 169,99 €</span></div></div>
+    <div class="carte marque"><img src="../assets/logo-otter.png" alt="Otter.ai"><div class="note"><b>15 / 18</b><span>concurrent indirect : la même promesse sans appareil</span></div></div>
+
+    <div class="outil"><img src="../assets/logos/semrush-long.jpg" alt="Semrush"><span>trafic, visibilité dans les IA, base France</span></div>
+    <div class="cel"><img class="cap" src="../assets/preuves/r-semrush-soundcore-hd.png" alt="Semrush soundcore.com : visibilité IA 59, trafic organique 36,8 k, encadrés"></div>
+    <div class="cel"><img class="cap" src="../assets/preuves/r-semrush-otter-hd.png" alt="Semrush otter.ai : visibilité IA 44, trafic organique 13,8 k, encadrés"></div>
+
+    <div class="outil"><img src="../assets/logos/meta.png" alt="Meta"><span>Bibliothèque publicitaire, publicités actives</span></div>
+    <div class="cel"><img class="cap" src="../assets/preuves/r-meta-soundcore-wide.png" alt="Bibliothèque publicitaire Meta, France, soundcore : 1 résultat, publicité inactive d'un tiers"></div>
+    <div class="cel"><img class="cap" src="../assets/preuves/r-meta-otter-ads.png" alt="Bibliothèque publicitaire Meta, États-Unis, publicités de la page Otter.ai"></div>
+
+    <div class="outil"><b>Réseaux sociaux</b><span>abonnés et publications, comptes officiels</span></div>
+    <div class="carte rsg"><div class="rs"><img src="../assets/logos/instagram.svg" alt="Instagram"><b>146 k</b><span>2 166 posts</span></div><div class="rs"><img src="../assets/logos/si-tiktok.svg" alt="TikTok"><b>338,8 k</b><span>actif</span></div><div class="rs"><img src="../assets/logos/si-facebook.svg" alt="Facebook"><b>143 k</b><span>actif</span></div><div class="rs"><img src="../assets/logos/si-x.svg" alt="X"><b>40,3 k</b><span>4 692 posts</span></div><div class="rs"><img src="../assets/logos/si-youtube.svg" alt="YouTube"><b>33,9 k</b><span>467 vidéos</span></div><div class="rs"><img src="../assets/logos/si-linkedin.svg" alt="LinkedIn"><b>3 766</b><span>0 post</span></div></div>
+    <div class="carte rsg"><div class="rs"><img src="../assets/logos/instagram.svg" alt="Instagram"><b>19,4 k</b><span>0 post</span></div><div class="rs"><img src="../assets/logos/si-linkedin.svg" alt="LinkedIn"><b>36,2 k</b><span>actif</span></div><div class="rs"><img src="../assets/logos/si-x.svg" alt="X"><b>17 k</b><span>12,5 k posts</span></div><div class="rs"><img src="../assets/logos/si-facebook.svg" alt="Facebook"><b>10 k</b><span>inactif (2022)</span></div><div class="rs"><img src="../assets/logos/si-youtube.svg" alt="YouTube"><b>4,5 k</b><span>126 vidéos</span></div><div class="rs"><img src="../assets/logos/si-tiktok.svg" alt="TikTok"><b>1 490</b><span>2 vidéos</span></div></div>
+  </div>
+  <p class="pied" data-tw="source">Sources : Semrush, base France ; Bibliothèque publicitaire Meta ; Instagram, TikTok, Facebook, X, YouTube, LinkedIn, (consulté le 26/09/2026).</p>
+  <div class="num">7 / 11</div>
+  <div class="notes">Troisième étape : le benchmark. On a appliqué la même grille à deux concurrents, et on les a passés dans les outils vus en cours.
+Le concurrent direct, c'est le Soundcore Work, d'Anker : un enregistreur IA au même prix. Semrush montre que la marque est bien plus citée que Plaud par les IA comme ChatGPT, mais c'est toute la marque Anker, surtout les écouteurs. Dans la bibliothèque publicitaire de Meta, en France, on ne trouve qu'une seule publicité, même pas de la marque. Sur les réseaux, Soundcore est très présent, surtout sur TikTok avec 338 000 abonnés, mais pour ses écouteurs : le Work n'y apparaît pas, et sa page LinkedIn n'a publié aucun post.
+Le concurrent indirect, c'est Otter.ai, une application de transcription. Elle fait beaucoup de publicité aux États-Unis, comme on le voit ici, mais rien en France. Elle mise sur LinkedIn et X, avec un public professionnel, alors que son Instagram n'a aucune publication et que son Facebook est à l'arrêt depuis 2022.</div>
+</section>
+
+<!-- ============ 8 · SWOT ============ -->
+<section id="s8">
+  <h2 data-tw="titre">SWOT de contenus</h2>
+  <div class="swot" data-tw="swot">
+    <div class="f"><h3>Forces <span>interne</span></h3><ul><li>Identité cohérente : 41 / 45</li><li>4,9 sur l'App Store, 2,5 M d'utilisateurs</li><li>Site et aide en français</li></ul></div>
+    <div class="w"><h3>Faiblesses <span>interne</span></h3><ul><li>Aucune FAQ avant achat</li><li>Instagram en anglais</li><li>62 % du trafic Google tape déjà « Plaud »</li></ul></div>
+    <div class="o"><h3>Opportunités <span>externe</span></h3><ul><li>La rentrée : intérêt à 84 / 100</li><li>« dictaphone ia » : 260 recherches, facile</li><li>Concurrents absents d'Instagram</li></ul></div>
+    <div class="m"><h3>Menaces <span>externe</span></h3><ul><li>Logiciels français devant sur Google</li><li>Téléphones qui transcrivent</li><li>Méfiance envers l'IA américaine</li></ul></div>
+  </div>
+  <p class="pied" data-tw="source">Sources : grille des slides 6 et 7 ; Semrush, base France ; Google Trends, France, (consulté le 26/09/2026).</p>
+  <div class="num">8 / 11</div>
+  <div class="notes">On résume le diagnostic dans un SWOT de contenus.
+En forces : une identité très cohérente, de très bonnes notes clients et une vraie version française.
+En faiblesses : aucune FAQ pour rassurer avant l'achat, un Instagram en anglais, et un trafic Google qui vient surtout de gens qui connaissent déjà la marque : d'après Semrush, 62 % des visites arrivent de recherches sur le nom « Plaud ».
+Côté opportunités : c'est la rentrée, l'intérêt pour Plaud remonte dans Google Trends ; une recherche comme « dictaphone ia » est tapée 260 fois par mois et facile à conquérir ; et les concurrents ne sont pas présents sur Instagram.
+Côté menaces : des logiciels français comme Noota sont mieux placés sur Google, les téléphones et les visioconférences transcrivent eux aussi, et une partie de la cible se méfie des données confiées à une IA américaine.
+
+Pour comprendre les opportunités :
+La rentrée : dans Google Trends, l'intérêt pour Plaud en France est remonté à 84 sur 100 fin septembre. Le pic de l'année dernière tombait aussi à la rentrée, c'est donc le bon moment pour publier.
+« dictaphone ia » : 260 recherches par mois en France, et Semrush juge le mot-clé « facile » à conquérir. Plaud n'y est pas bien placé.
+Concurrents absents d'Instagram : Otter n'y a rien publié et Soundcore n'y montre pas son enregistreur, la place est libre.
+
+Pour comprendre les menaces :
+Logiciels français devant sur Google : Semrush classe Noota, Allo ou Voicit comme les concurrents de Plaud sur ses mots-clés.
+Téléphones qui transcrivent : Teams, Zoom et le Dictaphone de l'iPhone font déjà une partie du travail. La cible le demande : « quelle différence avec l'application Dictaphone ? ».
+Méfiance envers l'IA américaine : une vraie question de la cible, « toutes les données vont alimenter les IA basées au US ».</div>
+</section>
+
+<!-- ============ 9 · FAIBLESSE ET RECOMMANDATIONS ============ -->
+<section id="s9">
+  <h2 data-tw="titre">Des réponses, <span class="gris">mais loin des questions</span></h2>
+  <div class="fr9">
+    <div class="fr9-g">
+      <div class="faib" data-tw="faiblesse"><span>Faiblesse principale</span><b>5 questions sur 10 de la cible n'ont qu'une réponse partielle</b></div>
+      <div class="parcours" data-tw="preuve FAQ">
+        <img class="cap" src="../assets/preuves/r-fr-menu-faq.png" alt="Menu Assistance de fr.plaud.ai, lien FAQ encadré">
+        <span class="fl">↓ le lien « FAQ » ouvre…</span>
+        <img class="cap" src="../assets/preuves/r-fr-faq.png" alt="Page Dépannage du centre d'aide, encadrée">
+      </div>
+    </div>
+    <div class="recos" data-tw="recommandations">
+      <div class="reco prio"><span class="n">1</span><div><b>Créer une FAQ avant achat, en français <span class="chip">Prioritaire</span></b><span class="d">Les 10 vraies questions, reliées depuis la fiche produit, les tarifs et la bio Instagram</span></div></div>
+      <div class="reco clair"><span class="n">2</span><div><b>Viser « dictaphone ia » sur Google</b><span class="d">Pages comparatives en français, avec des tableaux</span></div></div>
+      <div class="reco clair"><span class="n">3</span><div><b>Un Instagram en français, avec des créateurs</b><span class="d">Un CTA par post, des réponses aux commentaires</span></div></div>
+    </div>
+  </div>
+  <p class="pied" data-tw="source">Sources : fr.plaud.ai, menu « Assistance » ; support.plaud.ai/hc/fr, « Dépannage » ; Semrush, base France, (consulté le 26/09/2026).</p>
+  <div class="num">9 / 11</div>
+  <div class="notes">Tout cela nous mène à notre faiblesse principale : les réponses existent, mais elles ne sont pas là où la cible se pose ses questions. Regardez : dans le menu, le lien « FAQ » ouvre une page de dépannage, sans aucune question d'avant achat. Et sur les dix questions qu'on a relevées, la moitié n'obtient qu'une réponse partielle.
+D'où notre recommandation prioritaire : créer une FAQ avant achat, en français, construite à partir de ces dix vraies questions. Dans le vocabulaire du cours, c'est la décision « créer », qui comble un content gap. Et elle coûte peu, puisque les réponses existent déjà.
+Deuxième recommandation : se positionner sur des recherches comme « dictaphone ia ». Troisième : un Instagram en français, avec des créateurs, puisque c'est le format qui marche le mieux.</div>
+</section>
+
+<!-- ============ 10 · BONUS ============ -->
+<section id="s10">
+  <h2 data-tw="titre">Bonus : 10 questions de la cible</h2>
+  <div class="q10-bilan" data-tw="bilan"><span><b class="vert">5</b> réponses complètes</span><span><b class="orange">5</b> réponses partielles</span><span><b>0</b> sans réponse</span></div>
+  <div class="q10" data-tw="questions">
+    <div class="carte q"><span class="n">1</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« Et doit on être abonné ? »<small>YouTube, test Frandroid</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q"><span class="n">2</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Do I still really need a Plaud sub? » (avec ChatGPT Plus)<small>Reddit, 07/02/2026</small></p><span class="rep part">Partiel</span></div>
+    <div class="carte q"><span class="n">3</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Quantas horas posso usar o PLAUD sem […] pagar? »<small>Reddit, 17/09/2026</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q"><span class="n">4</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« le traitement se fait en local ? »<small>YouTube, test Frandroid</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q"><span class="n">5</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« toutes les données vont alimenter les IA basées au US »<small>YouTube, test Frandroid</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q"><span class="n">6</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« how you handle the privacy and consent side »<small>Reddit, 17/07/2026</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q"><span class="n">7</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Everything was in the wrong language?! »<small>Reddit, 09/09/2026</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q"><span class="n">8</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« How to obtain good and reliable transcriptions? »<small>Reddit, 07/03/2026</small></p><span class="rep part">Partiel</span></div>
+    <div class="carte q"><span class="n">9</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Any way to record a teams meeting if I am wearing headphones? »<small>Reddit, 16/08/2026</small></p><span class="rep part">Partiel</span></div>
+    <div class="carte q"><span class="n">10</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« Mais quelle différence avec l'application Dictaphone ? »<small>YouTube, test Frandroid</small></p><span class="rep part">Partiel</span></div>
+  </div>
+  <p class="pied" data-tw="source">Sources : Reddit, r/PlaudNoteUsers ; YouTube, test de Frandroid ; fr.plaud.ai et support.plaud.ai/hc/fr, (consulté le 25/09/2026).</p>
+  <div class="num">10 / 11</div>
+  <div class="notes">En bonus, voici les dix questions que la cible pose vraiment, relevées sur le forum Reddit des utilisateurs et sous le test vidéo de Frandroid. Elles sont citées telles quelles.
+Elles tournent autour de l'abonnement, de la confidentialité des données, de la qualité de la transcription et de l'utilité de l'appareil face au téléphone.
+Plaud a une réponse à chacune, mais la moitié du temps elle est partielle ou mal placée. C'est exactement ce que notre FAQ viendrait corriger. Merci de votre attention.</div>
+</section>
+
+<!-- ============ 11 · ANNEXE ============ -->
+<section id="s11">
+  <h2 data-tw="titre">Annexe : sources et outils utilisés</h2>
+  <div class="anx2">
+    <div class="anx-c" data-tw="sources">
+      <ol class="apa">
+        <li><span class="r">Plaud. (2026). <i>Plaud, appareils de prise de notes IA</i> : accueil, fiche NotePin, tarifs. fr.plaud.ai. 26/09/2026.</span></li>
+        <li><span class="r">Plaud. (2026, 22 septembre). <i>Meilleur outil de transcription de réunion : 5 solutions</i>. fr.plaud.ai/blogs. 26/09/2026.</span></li>
+        <li><span class="r">Plaud. (2026). <i>Centre d'aide, catégorie « Dépannage »</i>. support.plaud.ai/hc/fr. 26/09/2026.</span></li>
+        <li><span class="r">Instagram. (2026). <i>@plaud_official</i>, profil et 10 dernières publications. instagram.com. 26/09/2026.</span></li>
+        <li><span class="r">Instagram, TikTok, Facebook, X, YouTube, LinkedIn. (2026). <i>Comptes officiels de Soundcore et d'Otter.ai</i>. 26/09/2026.</span></li>
+        <li><span class="r">Semrush. (2026). <i>Domain Overview : plaud.ai, soundcore.com, otter.ai</i>, base France. semrush.com. 26/09/2026.</span></li>
+        <li><span class="r">Semrush. (2026). <i>Keyword Overview : « dictaphone ia », « ia compte rendu reunion »</i>, France. semrush.com. 26/09/2026.</span></li>
+        <li><span class="r">Meta. (2026). <i>Bibliothèque publicitaire : « plaud », « soundcore » (France), « otter.ai » (États-Unis)</i>. facebook.com/ads/library. 26/09/2026.</span></li>
+        <li><span class="r">Google. (2026). <i>Google Trends : « Plaud », « Otter ai », « Soundcore Work »</i>, France, 5 ans. trends.google.com. 25/09/2026.</span></li>
+        <li><span class="r">Reddit. (2026). <i>r/PlaudNoteUsers</i>, fils cités en slide 10, via l'archive Arctic Shift. 25/09/2026.</span></li>
+        <li><span class="r">Frandroid. (2025). <i>J'ai confié ma mémoire à une IA pendant 1 semaine ! Plaud Note Pro</i> [vidéo et commentaires]. YouTube. 25/09/2026.</span></li>
+        <li><span class="r">Soundcore. (2026). <i>soundcore Work, enregistreur vocal IA</i>. soundcore.com/fr. 25/09/2026.</span></li>
+        <li><span class="r">Otter.ai. (2026). <i>Accueil et tarifs</i>. otter.ai. 25/09/2026.</span></li>
+        <li><span class="r">Obaidalahe, Z. (2026). <i>R5.MDEE.15 Stratégie de contenu et rédaction web, support de la séance 3</i>. IUT de Lille. Moodle.</span></li>
+      </ol>
+    </div>
+    <div class="anx-ia" data-tw="IA">
+      <div class="qui2"><img src="../assets/logo-claude.svg" alt="">Ce que Claude a fait</div>
+      <ul><li>Chiffres clés</li><li>Recherche</li><li>Mise en page du support</li></ul>
+      <p>Le groupe : choix de la marque, relecture des chiffres, validation des notes et des recommandations.</p>
+    </div>
+  </div>
+  <p class="pied" data-tw="mention">Romane Da Silva, Yoan Bailleul &amp; Sofian Chtioui · BUT3 MDEE · IUT de Roubaix</p>
+  <div class="num">11 / 11</div>
+  <div class="notes">Toutes nos sources sont ici. On s'est servis de Claude pour relever les chiffres clés et faire la recherche, mais chaque chiffre vient d'une capture qu'on a vérifiée, encadrée en rouge, et les notes de la grille ont été relues par le groupe.</div>
+</section>
+
+<script>
+/* logos sur chaque slide : Plaud en haut à gauche, IUT en haut à droite (plus petit) */
+const secs=[...document.querySelectorAll('section')];
+secs.forEach(s=>s.insertAdjacentHTML('afterbegin','<img class="lg-s" src="../assets/logo-plaud-hd.png" alt="Plaud"><img class="lg-i" src="../assets/logo-iut.png" alt="IUT de Lille, site de Roubaix">'));
+
+/* espaces insécables avant : ; ? ! et dans les guillemets */
+(function(){const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
+  while((n=w.nextNode())){ if(n.parentElement.closest('script,style'))continue;
+    n.nodeValue=n.nodeValue.replace(/ ([:;?!»])/g,' $1').replace(/« /g,'« '); }})();
+
+/* ---------- mode réglage (touche T) : glisser un bloc data-tw, flèches pour ajuster, C pour copier ---------- */
+const REGLAGES={"s1|titre":{"dx":6.87,"dy":-15.79},"s3|preuve accueil":{"dx":5.92,"dy":-0.45},"s3|gamme":{"dx":-5.85,"dy":-0.45},"s3|chiffres":{"dx":-4.65,"dy":-1.22}};
+let perso={}; try{perso=JSON.parse(localStorage.getItem('reglages-audit-plaud-4')||'{}')}catch(e){perso={}}
+const sauver=()=>{try{localStorage.setItem('reglages-audit-plaud-4',JSON.stringify(perso))}catch(e){}};
+const panneau=document.getElementById('panneau');
+let vise=null, i=0;
+const enReglage=()=>document.body.classList.contains('reglage');
+const cle=el=>el.closest('section').id+'|'+el.dataset.tw;
+const tous=[...document.querySelectorAll('[data-tw]')];
+tous.forEach(el=>el._s0=el.getAttribute('style')||'');
+const valeurs=el=>{const k=cle(el);return Object.assign({},REGLAGES[k]||{},perso[k]||{});};
+function appliquer(el){el.setAttribute('style',el._s0);const v=valeurs(el);
+  if(v.dx||v.dy) el.style.translate=`${v.dx||0}vw ${v.dy||0}vh`;
+  if(v.w!=null) el.style.width=v.w+'vw'; if(v.fs!=null) el.style.fontSize=v.fs+'vw';}
+const r2=x=>Math.round(x*100)/100;
+function lire(el,n){const v=valeurs(el); if(v[n]!=null) return v[n];
+  if(n==='w') return r2(el.offsetWidth/innerWidth*100);
+  if(n==='fs') return r2(parseFloat(getComputedStyle(el).fontSize)/innerWidth*100); return 0;}
+function modif(el,ch){const k=cle(el); perso[k]=Object.assign({},perso[k]||{},ch); sauver(); appliquer(el); ecrire();}
+function choisir(el){if(vise)vise.classList.remove('vise'); vise=el; if(el)el.classList.add('vise'); ecrire();}
+function ecrire(){ if(!enReglage())return;
+  const els=[...secs[i].querySelectorAll('[data-tw]')];
+  panneau.innerHTML='<b>Réglages · slide '+(i+1)+'</b>'+els.map((el,j)=>{const t=Object.entries(valeurs(el)).map(([a,b])=>a+' '+b).join(' · ')||'·';
+    return `<div class="l${el===vise?' vise':''}" data-j="${j}"><span>${el.dataset.tw}</span><span>${t}</span></div>`;}).join('')
+    +'<div class="aide">Clic : choisir · glisser ou flèches : déplacer · Maj+flèches : largeur · + et − : taille du texte<br>Retour arrière : remettre à zéro · C : copier · P : panneau à gauche · T : sortir</div>';
+  panneau.querySelectorAll('.l').forEach(r=>r.onclick=()=>choisir(els[+r.dataset.j]));}
+function suivre(f){const mv=e=>f(e),up=()=>{removeEventListener('mousemove',mv);removeEventListener('mouseup',up)};addEventListener('mousemove',mv);addEventListener('mouseup',up);}
+addEventListener('mousedown',ev=>{ if(!enReglage()||ev.target.closest('.panneau'))return;
+  const el=ev.target.closest('[data-tw]'); if(!el)return; ev.preventDefault(); choisir(el);
+  const x0=ev.clientX,y0=ev.clientY,dx0=lire(el,'dx'),dy0=lire(el,'dy');
+  suivre(e=>modif(el,{dx:r2(dx0+(e.clientX-x0)/innerWidth*100),dy:r2(dy0+(e.clientY-y0)/innerHeight*100)}));});
+tous.forEach(el=>{if(Object.keys(valeurs(el)).length) appliquer(el);});
+
+/* ---------- notes orateur modifiables (touche N) : clic pour écrire, Échap pour sortir, C pour tout copier ---------- */
+const CLE_N='notes-audit-plaud-4-fr';
+let notesPerso={}; try{notesPerso=JSON.parse(localStorage.getItem(CLE_N)||'{}')}catch(e){notesPerso={}}
+const sauverNotes=()=>{try{localStorage.setItem(CLE_N,JSON.stringify(notesPerso))}catch(e){}};
+const notesEls=[...document.querySelectorAll('section .notes')];
+notesEls.forEach(n=>{const id=n.closest('section').id; n._orig=n.innerText.trim(); n.contentEditable='true'; n.spellcheck=true; n.dataset.aide='Clic pour modifier · Échap pour sortir · C pour copier';
+  if(notesPerso[id]!=null){ if(notesPerso[id]===n._orig) delete notesPerso[id]; else n.innerText=notesPerso[id]; }
+  n.addEventListener('input',()=>{const t=n.innerText.trim(); if(t===n._orig) delete notesPerso[id]; else notesPerso[id]=t; sauverNotes();});});
+const toast=document.createElement('div'); toast.className='toast'; document.body.appendChild(toast);
+function prevenir(t){toast.textContent=t; toast.classList.add('on'); clearTimeout(prevenir._t); prevenir._t=setTimeout(()=>toast.classList.remove('on'),2200);}
+function copier(t){ if(navigator.clipboard&&navigator.clipboard.writeText) return navigator.clipboard.writeText(t).catch(()=>vieux(t)); vieux(t); }
+function vieux(t){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();}
+function toutCopier(){ const tout=Object.assign({},REGLAGES); for(const c in perso) tout[c]=Object.assign({},REGLAGES[c]||{},perso[c]);
+  notesEls.forEach(n=>{const sec=n.closest('section'), id=sec.id; if(notesPerso[id]!=null) tout['notes|'+id+' (slide '+(secs.indexOf(sec)+1)+')']=notesPerso[id];});
+  copier(JSON.stringify(tout,null,1)); const nb=Object.keys(notesPerso).length; prevenir('Copié : réglages'+(nb?' + '+nb+' note(s) modifiée(s)':''));}
+
+/* ---------- navigation ---------- */
+const liens=[...document.querySelectorAll('.rail .liens a')];
+const barre=document.querySelector('.rail .bar i');
+function maj(){ secs.forEach((s,k)=>s.classList.toggle('ici',k===i)); liens.forEach((a,k)=>a.classList.toggle('on',k===i));
+  if(barre) barre.style.height=((i+1)/secs.length*100)+'%'; ecrire(); }
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){i=secs.indexOf(e.target);maj();}})},{threshold:.6});
+secs.forEach(s=>io.observe(s)); maj();
+function aller(n){i=Math.max(0,Math.min(secs.length-1,n));secs[i].scrollIntoView({behavior:'smooth'});}
+addEventListener('keydown',e=>{ const k=e.key;
+  if(document.activeElement&&document.activeElement.tagName==='VIDEO'&&[' ','ArrowLeft','ArrowRight'].includes(k)) return;
+  if(document.activeElement&&document.activeElement.classList&&document.activeElement.classList.contains('notes')){ if(k==='Escape'){e.preventDefault();document.activeElement.blur();} return; }
+  if(enReglage()&&vise){
+    if(k.startsWith('Arrow')){ e.preventDefault(); const hz=k==='ArrowLeft'||k==='ArrowRight', s=(k==='ArrowRight'||k==='ArrowDown')?1:-1;
+      if(e.shiftKey&&hz) modif(vise,{w:r2(lire(vise,'w')+.5*s)}); else {const n=hz?'dx':'dy'; modif(vise,{[n]:r2(lire(vise,n)+.25*s)});} return; }
+    if(k==='+'||k==='='||k==='-'){e.preventDefault(); modif(vise,{fs:Math.round(lire(vise,'fs')*(k==='-'?1/1.04:1.04)*1000)/1000}); return;}
+    if(k==='Backspace'||k==='Delete'){e.preventDefault(); delete perso[cle(vise)]; sauver(); appliquer(vise); ecrire(); return;}
+    if(k==='Escape'){choisir(null);return;} }
+  if(k==='t'||k==='T'){document.body.classList.toggle('reglage'); if(!enReglage())choisir(null); else ecrire(); return;}
+  if((k==='c'||k==='C')&&!e.metaKey&&!e.ctrlKey){toutCopier(); return;}
+  if((k==='p'||k==='P')&&enReglage()){panneau.classList.toggle('gauche');return;}
+  if(k==='n'||k==='N'){document.body.classList.toggle('notesvues');return;}
+  if(['ArrowDown','PageDown',' ','ArrowRight'].includes(k)){e.preventDefault();aller(i+1);}
+  else if(['ArrowUp','PageUp','ArrowLeft'].includes(k)){e.preventDefault();aller(i-1);}
+  else if(k==='Home'){e.preventDefault();aller(0);} else if(k==='End'){e.preventDefault();aller(secs.length-1);}
+});
+
+/* lecteur vidéo : clic sur la miniature, puis commandes du navigateur */
+const ecran=document.createElement('div'); ecran.className='ecran'; ecran.innerHTML='<video controls playsinline></video><button class="x" aria-label="Fermer">×</button>'; document.body.appendChild(ecran);
+const ev=ecran.querySelector('video');
+const fermer=()=>{ev.pause(); ecran.classList.remove('on');};
+document.querySelectorAll('.lecteur').forEach(l=>{const v=l.querySelector('video');
+  l.addEventListener('click',()=>{ ev.src=v.getAttribute('src'); ecran.classList.add('on'); ev.currentTime=0; ev.play(); ev.focus(); });});
+ecran.addEventListener('click',e=>{ if(e.target===ecran||e.target.classList.contains('x')) fermer(); });
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&ecran.classList.contains('on')) fermer(); },true);
+
+/* carrousels horizontaux : flèches (une carte à la fois) et points */
+document.querySelectorAll('.car2').forEach(c=>{
+  const pi=c.querySelector('.piste'), its=[...pi.children], dots=c.querySelector('.car-dots');
+  dots.innerHTML=its.map(()=>'<i></i>').join('');
+  const cur=()=>{ if(pi.scrollLeft+pi.clientWidth>=pi.scrollWidth-4) return its.length-1; let k=0,b=1e9; its.forEach((it,j)=>{const d=Math.abs(it.offsetLeft-pi.offsetLeft-pi.scrollLeft); if(d<b){b=d;k=j;}}); return k;};
+  const maj=()=>{const k=cur(); [...dots.children].forEach((d,j)=>d.classList.toggle('on',j===k));};
+  const aller=n=>{const it=its[Math.max(0,Math.min(its.length-1,n))]; pi.scrollTo({left:it.offsetLeft-pi.offsetLeft,behavior:'smooth'});};
+  c.querySelector('.car-p').addEventListener('click',()=>aller(cur()-1));
+  c.querySelector('.car-n').addEventListener('click',()=>aller(cur()+1));
+  [...dots.children].forEach((d,j)=>d.addEventListener('click',()=>aller(j)));
+  pi.addEventListener('scroll',()=>requestAnimationFrame(maj)); maj();
+});
+
+/* loupe : clic sur une preuve de la grille pour l'agrandir, clic ou Échap pour fermer */
+const loupe=document.createElement('div'); loupe.className='loupe'; loupe.innerHTML='<img alt="">'; document.body.appendChild(loupe);
+document.querySelectorAll('.grille .img img').forEach(im=>im.addEventListener('click',()=>{loupe.firstChild.src=im.src; loupe.classList.add('on');}));
+loupe.addEventListener('click',()=>loupe.classList.remove('on'));
+addEventListener('keydown',e=>{ if(e.key==='Escape') loupe.classList.remove('on'); },true);
+</script>
+</body>
+</html>
