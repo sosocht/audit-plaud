@@ -337,6 +337,9 @@ h2 .gris{color:var(--tenu)}
 .ecran video{max-width:92vw;max-height:92vh;border-radius:14px;background:#000}
 .ecran .x{position:absolute;top:2.4vh;right:2.4vw;width:5.6vh;height:5.6vh;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;font-size:3vh;cursor:pointer}
 @media print{.ecran{display:none!important}}
+
+/* slide 4 : une carte sur deux en gris clair (Sofian, 27/09) */
+.p4 .it4:nth-child(even){background:#ececea;border-color:#e0e0dd}
 /* notes orateur, touche N */
 .notes{display:none;position:fixed;left:var(--rail);right:0;bottom:0;background:var(--encre);
   color:#fff;padding:1.6vh 4vw;font-size:15px;line-height:1.55;max-height:36vh;overflow:auto;z-index:40;cursor:text;outline:0;white-space:pre-line}
@@ -400,7 +403,7 @@ Nous avons suivi la démarche du cours, étape par étape, de l'inventaire jusqu
   <div class="som">
     <div class="som-g" data-tw="titre sommaire"><h2>Sommaire</h2><p>Les six étapes de l'audit de contenus, appliquées à Plaud.</p></div>
     <ol data-tw="liste">
-      <li><a href="#s3"><span class="n">01</span><span class="t">Qui est Plaud ?</span><span class="f">→</span></a></li>
+      <li><a href="#s3"><span class="n">01</span><span class="t">Qu'est-ce que Plaud ?</span><span class="f">→</span></a></li>
       <li><a href="#s4"><span class="n">02</span><span class="t">Inventaire : 5 pages du site</span><span class="f">→</span></a></li>
       <li><a href="#s5"><span class="n">03</span><span class="t">Inventaire : 10 posts Instagram</span><span class="f">→</span></a></li>
       <li><a href="#s6"><span class="n">04</span><span class="t">Application de la grille</span><span class="f">→</span></a></li>
@@ -419,7 +422,7 @@ On termine par un bonus : les dix questions que la cible pose vraiment.</div>
 
 <!-- ============ 3 · QUI EST PLAUD ============ -->
 <section id="s3">
-  <h2 data-tw="titre">Qui est Plaud ?</h2>
+  <h2 data-tw="titre">Qu'est-ce que Plaud ?</h2>
   <div class="qui">
     <div class="qui-img" data-tw="preuve accueil"><img class="cap" src="../assets/preuves/r-fr-plaud-accueil-full.png" alt="Accueil de fr.plaud.ai : « 4,9 sur 5 » et « 2,5 millions de professionnels » encadrés en rouge"></div>
     <div class="gamme" data-tw="gamme">
@@ -653,7 +656,8 @@ Plaud a une réponse à chacune, mais la moitié du temps elle est partielle ou 
     <div class="anx-ia" data-tw="IA">
       <div class="qui2"><img src="../assets/logo-claude.svg" alt="">Ce que Claude a fait</div>
       <ul><li>Chiffres clés</li><li>Recherche</li><li>Mise en page du support</li></ul>
-      <p>Le groupe : choix de la marque, relecture des chiffres, validation des notes et des recommandations.</p>
+      <div class="qui2">Ce que le groupe a fait</div>
+      <ul><li>Choix de la marque</li><li>Relecture des chiffres et des informations</li><li>Réflexion et approche réflexive</li></ul>
     </div>
   </div>
   <p class="pied" data-tw="mention">Romane Da Silva, Yoan Bailleul &amp; Sofian Chtioui · BUT3 MDEE · IUT de Roubaix</p>
