@@ -344,6 +344,10 @@ h2 .gris{color:var(--tenu)}
 .p4 .it4:nth-child(even) dt{color:rgba(255,255,255,.6)}
 .p4 .it4:nth-child(even) .nom b{color:#fff}
 .p4 .it4:nth-child(even) .cap{border-color:rgba(255,255,255,.12)}
+
+/* slide 4 : captures agrandissables ; slide 6 : commentaire centré entre les critères et le trait (Sofian, 28/09) */
+.p4 .cap{cursor:zoom-in}
+.grille .fait{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
 /* notes orateur, touche N */
 .notes{display:none;position:fixed;left:var(--rail);right:0;bottom:0;background:var(--encre);
   color:#fff;padding:1.6vh 4vw;font-size:15px;line-height:1.55;max-height:36vh;overflow:auto;z-index:40;cursor:text;outline:0;white-space:pre-line}
@@ -504,23 +508,23 @@ Une seule sort du lot : ce Reel, tourné avec un créateur, Daniel, qui raconte 
 <section id="s6">
   <h2 data-tw="titre">Application de la grille</h2>
   <div class="grille" data-tw="cartes">
-    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-S2.png" alt="Preuve pour Fiche NotePin, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>S2</i><b>Fiche NotePin</b></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-S2.png" alt="Preuve pour Fiche NotePin, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><b>Fiche NotePin</b></div>
       <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Conversion<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li></ul>
       <p class="fait">« Ajouter au panier », mais dates d'avis à l'américaine</p>
       <div class="score"><b class="vert">15<small> / 18</small></b><span class="chip vert">Conserver</span></div></div>
-    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I3.png" alt="Preuve pour Carrousel Plaud One, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>I3</i><b>Carrousel Plaud One</b></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I3.png" alt="Preuve pour Carrousel Plaud One, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><b>Carrousel Plaud One</b></div>
       <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Visibilité<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Conversion<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li></ul>
       <p class="fait">Bénéfices clairs, « Link in bio »</p>
       <div class="score"><b class="vert">16<small> / 18</small></b><span class="chip vert">Conserver</span></div></div>
-    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I10.png" alt="Preuve pour Reel avec un créateur, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>I10</i><b>Reel avec un créateur</b></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I10.png" alt="Preuve pour Reel avec un créateur, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><b>Reel avec un créateur</b></div>
       <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Conversion<span class="pts faible"><u class="o"></u><u></u><u></u></span></li></ul>
       <p class="fait">2 160 j'aime, mais aucun lien</p>
       <div class="score"><b class="vert">15<small> / 18</small></b><span class="chip vert">Conserver</span></div></div>
-    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-S5.png" alt="Preuve pour « FAQ » du menu, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>S5</i><b>« FAQ » du menu</b></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-S5.png" alt="Preuve pour « FAQ » du menu, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><b>« FAQ » du menu</b></div>
       <ul class="crit"><li>Pertinence<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Cohérence<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Conversion<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li></ul>
       <p class="fait">Mène au dépannage, « Chat Now » en anglais</p>
       <div class="score"><b class="orange">10<small> / 18</small></b><span class="chip orange">Améliorer</span></div></div>
-    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I7.png" alt="Preuve pour Image inspiration, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><i>I7</i><b>Image inspiration</b></div>
+    <div class="carte"><div class="img"><img class="cap" src="../assets/preuves/g6-I7.png" alt="Preuve pour Image inspiration, encadrée en rouge (clic pour agrandir)"></div><div class="nom"><b>Image inspiration</b></div>
       <ul class="crit"><li>Pertinence<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Lisibilité<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Cohérence<span class="pts"><u class="o"></u><u class="o"></u><u class="o"></u></span></li><li>Fraîcheur<span class="pts"><u class="o"></u><u class="o"></u><u></u></span></li><li>Visibilité<span class="pts faible"><u class="o"></u><u></u><u></u></span></li><li>Conversion<span class="pts faible"><u class="o"></u><u></u><u></u></span></li></ul>
       <p class="fait">Aucun produit, 1 seul hashtag</p>
       <div class="score"><b class="orange">11<small> / 18</small></b><span class="chip orange">Améliorer</span></div></div>
@@ -778,7 +782,7 @@ document.querySelectorAll('.car2').forEach(c=>{
 
 /* loupe : clic sur une preuve de la grille pour l'agrandir, clic ou Échap pour fermer */
 const loupe=document.createElement('div'); loupe.className='loupe'; loupe.innerHTML='<img alt="">'; document.body.appendChild(loupe);
-document.querySelectorAll('.grille .img img').forEach(im=>im.addEventListener('click',()=>{loupe.firstChild.src=im.src; loupe.classList.add('on');}));
+document.querySelectorAll('.grille .img img, .p4 .cap').forEach(im=>im.addEventListener('click',()=>{loupe.firstChild.src=im.src; loupe.classList.add('on');}));
 loupe.addEventListener('click',()=>loupe.classList.remove('on'));
 addEventListener('keydown',e=>{ if(e.key==='Escape') loupe.classList.remove('on'); },true);
 </script>
