@@ -348,6 +348,11 @@ h2 .gris{color:var(--tenu)}
 /* slide 4 : captures agrandissables ; slide 6 : commentaire centré entre les critères et le trait (Sofian, 28/09) */
 .p4 .cap{cursor:zoom-in}
 .grille .fait{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+
+/* slide 10 : 7 plateformes, « Non » en rouge, preuve au clic */
+.q .rep.non{background:var(--rouge)}
+.q.clic{cursor:zoom-in}
+.q .src{object-fit:contain}
 /* notes orateur, touche N */
 .notes{display:none;position:fixed;left:var(--rail);right:0;bottom:0;background:var(--encre);
   color:#fff;padding:1.6vh 4vw;font-size:15px;line-height:1.55;max-height:36vh;overflow:auto;z-index:40;cursor:text;outline:0;white-space:pre-line}
@@ -596,7 +601,7 @@ Méfiance envers l'IA américaine : une vraie question de la cible, « toutes le
   <h2 data-tw="titre">Des réponses, <span class="gris">mais loin des questions</span></h2>
   <div class="fr9">
     <div class="fr9-g">
-      <div class="faib" data-tw="faiblesse"><span>Faiblesse principale</span><b>5 questions sur 10 de la cible n'ont qu'une réponse partielle</b></div>
+      <div class="faib" data-tw="faiblesse"><span>Faiblesse principale</span><b>6 questions sur 10 de la cible sans réponse complète</b></div>
       <div class="parcours" data-tw="preuve FAQ">
         <img class="cap" src="../assets/preuves/r-fr-menu-faq.png" alt="Menu Assistance de fr.plaud.ai, lien FAQ encadré">
         <span class="fl">↓ le lien « FAQ » ouvre…</span>
@@ -611,7 +616,7 @@ Méfiance envers l'IA américaine : une vraie question de la cible, « toutes le
   </div>
   <p class="pied" data-tw="source">Sources : fr.plaud.ai, menu « Assistance » ; support.plaud.ai/hc/fr, « Dépannage » ; Semrush, base France, (consulté le 26/09/2026).</p>
   <div class="num">9 / 11</div>
-  <div class="notes">Tout cela nous mène à notre faiblesse principale : les réponses existent, mais elles ne sont pas là où la cible se pose ses questions. Regardez : dans le menu, le lien « FAQ » ouvre une page de dépannage, sans aucune question d'avant achat. Et sur les dix questions qu'on a relevées, la moitié n'obtient qu'une réponse partielle.
+  <div class="notes">Tout cela nous mène à notre faiblesse principale : les réponses existent, mais elles ne sont pas là où la cible se pose ses questions. Regardez : dans le menu, le lien « FAQ » ouvre une page de dépannage, sans aucune question d'avant achat. Et sur les dix questions qu'on a relevées, six n'obtiennent pas de réponse complète : quatre ont une réponse partielle, deux n'en ont aucune.
 D'où notre recommandation prioritaire : créer une FAQ avant achat, en français, construite à partir de ces dix vraies questions. Dans le vocabulaire du cours, c'est la décision « créer », qui comble un content gap. Et elle coûte peu, puisque les réponses existent déjà.
 Deuxième recommandation : se positionner sur des recherches comme « dictaphone ia ». Troisième : un Instagram en français, avec des créateurs, puisque c'est le format qui marche le mieux.</div>
 </section>
@@ -619,24 +624,24 @@ Deuxième recommandation : se positionner sur des recherches comme « dictaphone
 <!-- ============ 10 · BONUS ============ -->
 <section id="s10">
   <h2 data-tw="titre">Bonus : 10 questions de la cible</h2>
-  <div class="q10-bilan" data-tw="bilan"><span><b class="vert">5</b> réponses complètes</span><span><b class="orange">5</b> réponses partielles</span><span><b>0</b> sans réponse</span></div>
+  <div class="q10-bilan" data-tw="bilan"><span><b class="vert">4</b> complètes</span><span><b class="orange">4</b> partielles</span><span><b class="rouge">2</b> sans réponse</span><span><b>7</b> plateformes</span></div>
   <div class="q10" data-tw="questions">
     <div class="carte q"><span class="n">1</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« Et doit on être abonné ? »<small>YouTube, test Frandroid</small></p><span class="rep oui">Oui</span></div>
-    <div class="carte q"><span class="n">2</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Do I still really need a Plaud sub? » (avec ChatGPT Plus)<small>Reddit, 07/02/2026</small></p><span class="rep part">Partiel</span></div>
-    <div class="carte q"><span class="n">3</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Quantas horas posso usar o PLAUD sem […] pagar? »<small>Reddit, 17/09/2026</small></p><span class="rep oui">Oui</span></div>
-    <div class="carte q"><span class="n">4</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« le traitement se fait en local ? »<small>YouTube, test Frandroid</small></p><span class="rep oui">Oui</span></div>
-    <div class="carte q"><span class="n">5</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« toutes les données vont alimenter les IA basées au US »<small>YouTube, test Frandroid</small></p><span class="rep oui">Oui</span></div>
-    <div class="carte q"><span class="n">6</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« how you handle the privacy and consent side »<small>Reddit, 17/07/2026</small></p><span class="rep oui">Oui</span></div>
-    <div class="carte q"><span class="n">7</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Everything was in the wrong language?! »<small>Reddit, 09/09/2026</small></p><span class="rep oui">Oui</span></div>
-    <div class="carte q"><span class="n">8</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« How to obtain good and reliable transcriptions? »<small>Reddit, 07/03/2026</small></p><span class="rep part">Partiel</span></div>
-    <div class="carte q"><span class="n">9</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« Any way to record a teams meeting if I am wearing headphones? »<small>Reddit, 16/08/2026</small></p><span class="rep part">Partiel</span></div>
-    <div class="carte q"><span class="n">10</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« Mais quelle différence avec l'application Dictaphone ? »<small>YouTube, test Frandroid</small></p><span class="rep part">Partiel</span></div>
+    <div class="carte q clic" data-preuve="../assets/preuves/questions/r-forum-1.png"><span class="n">2</span><img class="src" src="../assets/logos/lesnumeriques.png" alt="Les Numériques"><p>« Plaud AI est une start-Up américaine […] Quelles sont les garanties ? »<small>Forum Les Numériques, 16/08/2025</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q clic" data-preuve="../assets/preuves/questions/r-trustpilot-1.png"><span class="n">3</span><img class="src" src="../assets/logos/si-trustpilot.svg" alt="Trustpilot"><p>« Je galère sur le site pour trouver une solution d’assistance »<small>Trustpilot, 17/09/2026</small></p><span class="rep part">Partiel</span></div>
+    <div class="carte q clic" data-preuve="../assets/preuves/questions/r-instagram-1.png"><span class="n">4</span><img class="src" src="../assets/logos/instagram.svg" alt="Instagram"><p>« How come I apply a discount code but […] it changes back to the original price? »<small>Instagram, 15/09/2026</small></p><span class="rep part">Partiel</span></div>
+    <div class="carte q clic" data-preuve="../assets/preuves/questions/r-instagram-2.png"><span class="n">5</span><img class="src" src="../assets/logos/instagram.svg" alt="Instagram"><p>« Do all Plaud devices work under one account? »<small>Instagram, 02/09/2026</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q clic" data-preuve="../assets/preuves/questions/r-instagram-5.png"><span class="n">6</span><img class="src" src="../assets/logos/instagram.svg" alt="Instagram"><p>« When will you have your products back in stock? »<small>Instagram, 23/06/2026</small></p><span class="rep non">Non</span></div>
+    <div class="carte q clic" data-preuve="../assets/preuves/questions/r-facebook-1.png"><span class="n">7</span><img class="src" src="../assets/logos/si-facebook.svg" alt="Facebook"><p>« How does it capture phone call if using headphones? »<small>Facebook, 01/03/2026</small></p><span class="rep oui">Oui</span></div>
+    <div class="carte q clic" data-preuve="../assets/preuves/questions/r-x-1.png"><span class="n">8</span><img class="src" src="../assets/logos/si-x.svg" alt="X"><p>« Do you all plan to release a version that’d work on the Duo? »<small>X, 26/09/2026</small></p><span class="rep non">Non</span></div>
+    <div class="carte q"><span class="n">9</span><img class="src" src="../assets/logos/si-youtube.svg" alt="YouTube"><p>« Mais quelle différence avec l'application Dictaphone ? »<small>YouTube, test Frandroid</small></p><span class="rep part">Partiel</span></div>
+    <div class="carte q"><span class="n">10</span><img class="src" src="../assets/logos/si-reddit.svg" alt="Reddit"><p>« How to obtain good and reliable transcriptions? »<small>Reddit, 07/03/2026</small></p><span class="rep part">Partiel</span></div>
   </div>
-  <p class="pied" data-tw="source">Sources : Reddit, r/PlaudNoteUsers ; YouTube, test de Frandroid ; fr.plaud.ai et support.plaud.ai/hc/fr, (consulté le 25/09/2026).</p>
+  <p class="pied" data-tw="source">Sources : YouTube, Les Numériques, Trustpilot, Instagram, Facebook, X, Reddit ; fr.plaud.ai et support.plaud.ai/hc/fr, (consulté le 28/09/2026).</p>
   <div class="num">10 / 11</div>
-  <div class="notes">En bonus, voici les dix questions que la cible pose vraiment, relevées sur le forum Reddit des utilisateurs et sous le test vidéo de Frandroid. Elles sont citées telles quelles.
-Elles tournent autour de l'abonnement, de la confidentialité des données, de la qualité de la transcription et de l'utilité de l'appareil face au téléphone.
-Plaud a une réponse à chacune, mais la moitié du temps elle est partielle ou mal placée. C'est exactement ce que notre FAQ viendrait corriger. Merci de votre attention.</div>
+  <div class="notes">En bonus, voici dix questions que la cible pose vraiment, et on a volontairement varié les sources : sept plateformes, du forum des Numériques à Trustpilot, en passant par Instagram, Facebook, X, YouTube et Reddit. Elles sont citées telles quelles.
+Elles tournent autour de l'abonnement, de la confidentialité, des codes promo, du stock, de la compatibilité et de la qualité de la transcription.
+Plaud répond complètement à quatre d'entre elles seulement ; quatre n'ont qu'une réponse partielle ou mal placée, et deux n'en ont aucune. Et sous ses propres publications, la marque ne répond presque jamais : sur ces huit questions posées sur les réseaux, elle n'a répondu qu'une fois, sur Trustpilot. C'est exactement ce que notre FAQ viendrait corriger. Merci de votre attention.</div>
 </section>
 
 <!-- ============ 11 · ANNEXE ============ -->
@@ -654,7 +659,7 @@ Plaud a une réponse à chacune, mais la moitié du temps elle est partielle ou 
         <li><span class="r">Semrush. (2026). <i>Keyword Overview : « dictaphone ia », « ia compte rendu reunion »</i>, France. semrush.com. 26/09/2026.</span></li>
         <li><span class="r">Meta. (2026). <i>Bibliothèque publicitaire : « plaud », « soundcore » (France), « otter.ai » (États-Unis)</i>. facebook.com/ads/library. 26/09/2026.</span></li>
         <li><span class="r">Google. (2026). <i>Google Trends : « Plaud », « Otter ai », « Soundcore Work »</i>, France, 5 ans. trends.google.com. 25/09/2026.</span></li>
-        <li><span class="r">Reddit. (2026). <i>r/PlaudNoteUsers</i>, fils cités en slide 10, via l'archive Arctic Shift. 25/09/2026.</span></li>
+        <li><span class="r">Les Numériques, Trustpilot, Instagram, Facebook, X, Reddit. (2026). <i>Questions de la cible citées en slide 10</i>. 28/09/2026.</span></li>
         <li><span class="r">Frandroid. (2025). <i>J'ai confié ma mémoire à une IA pendant 1 semaine ! Plaud Note Pro</i> [vidéo et commentaires]. YouTube. 25/09/2026.</span></li>
         <li><span class="r">Soundcore. (2026). <i>soundcore Work, enregistreur vocal IA</i>. soundcore.com/fr. 25/09/2026.</span></li>
         <li><span class="r">Otter.ai. (2026). <i>Accueil et tarifs</i>. otter.ai. 25/09/2026.</span></li>
@@ -783,6 +788,7 @@ document.querySelectorAll('.car2').forEach(c=>{
 /* loupe : clic sur une preuve de la grille pour l'agrandir, clic ou Échap pour fermer */
 const loupe=document.createElement('div'); loupe.className='loupe'; loupe.innerHTML='<img alt="">'; document.body.appendChild(loupe);
 document.querySelectorAll('.grille .img img, .p4 .cap').forEach(im=>im.addEventListener('click',()=>{loupe.firstChild.src=im.src; loupe.classList.add('on');}));
+document.querySelectorAll('.q.clic').forEach(q=>q.addEventListener('click',()=>{loupe.firstChild.src=q.dataset.preuve; loupe.classList.add('on');}));
 loupe.addEventListener('click',()=>loupe.classList.remove('on'));
 addEventListener('keydown',e=>{ if(e.key==='Escape') loupe.classList.remove('on'); },true);
 </script>
